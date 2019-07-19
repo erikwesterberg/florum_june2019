@@ -22,31 +22,30 @@
     users = User.all
 
 6.times do |n|
-    title = Faker::Title.title
-    text = Faker::Text.text
+    title = Faker::Name.name
+    text = Faker::Lorem.paragraph
   
-    User.first.post.create(
-      title: text,
+    User.first.posts.create!(
+      title: title,
       text: text)
     puts "created post #{n+1}"
-    end
+end
 
-    posts = Post.all
+    
 
-#   6.times do
+  6.times do |n|
+        name = Faker::Name.name
+        details = Faker::Name.name
+        price = Faker::Number.number(2)
+        category = Faker::Name.name
+        quantity = Faker::Number.number(2)
 
-#         name = Faker::Name.name
-#         details = Faker::Details.details
-#         price = Faker::Price.price
-#         category = Faker::Category.category
-#         quantity = Faker::Quantity.quantity
-
-#     User.last.plants.create(
-#       name: name,
-#       details: details,
-#       price: price,
-#       category: category,
-#       quantity: quantity
-#     )
-#   end
+    User.last.plants.create(
+      name: name,
+      details: details,
+      price: price,
+      category: category,
+      quantity: quantity)
+      puts "created plants #{n+1}"
+  end
   
